@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background: url("/images/pattern-curve.svg");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+#container {
+    width: 1440px;
+    background: url("/images/pattern-bg.svg"), url("/images/pattern-quotes.svg");
+    background-repeat: no-repeat;
+    background-position: 90.2% 35.3%, 19.7% 30.5%;
+    font-family: 'Inter';
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+/* article */
+.text-area {
+    width: 635px;
+    margin: 278px 0 0 0;
+    z-index: 1;
+    position: absolute;
+}
+
+.quote {
+    color: hsl(240, 38%, 20%);
+    margin: 0;
+    font-weight: 300;
+    line-height: 1.375;
+    letter-spacing: 0.07px;
+}
+
+.person {
+    margin-top: 19px;
+}
+
+.name {
+    display: inline-block;
+    color: hsl(240, 38%, 20%);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.15px;
+}
+
+.title {
+    display: inline-block;
+    color: hsl(240, 18%, 77%);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* image-area */
+
+#overflow-box {
+    width: 540px;
+    height: 540px;
+    position: relative;
+    margin: 113px 0 0 570px;
+}
+
+.img-box {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#img-slider {
+    display: flex;
+}
+
+#shadow-box {
+    position: absolute;
+    z-index: -1;
+    width: 250px;
+    height: 100px;
+    margin: -109px 0 0 25px;
+    box-shadow: 0 34px 34px #bcbcd4;
+    background-color: transparent;
+}
+
+/* buttons */
+#btn-box {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 114px;
+    height: 56px;
+    margin: -28px 0 0 62px;
+}
+
+#left-circle {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    background: white;
+    border-radius: 50%;
+}
+
+#rectangle {
+    position: absolute;
+    width: 58px;
+    height: 56px;
+    margin-left: 28px;
+    background: white;
+}
+
+#right-circle {
+    position: absolute;
+    width: 54px;
+    height: 56px;
+    background: white;
+    border-radius: 50%;
+    margin-left: 58px;
+}
+
+#btn-left {
+    width: 12px;
+    height: 18px;
+    background: url("/images/icon-prev.svg");
+    z-index: 1;
+    margin-left: 21px;
+    border: none;
+    cursor: pointer;
+}
+
+#btn-right {
+    width: 12px;
+    height: 18px;
+    background: url("/images/icon-next.svg");
+    z-index: 1;
+    margin-left: 45px;
+    border: none;
+    cursor: pointer;
+}
+
+/* animations */
+#john-art {
+    opacity: 0;
+}
+
+@keyframes textAnimOut {
+    0% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes textAnimIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .05;
+    }
+
+    75% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes imgAnimRight {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(-540px);
+    }
+}
+
+@keyframes imgAnimLeft {
+    0% {
+        transform: translateX(-540px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.text-fade-out {
+    animation: textAnimOut .75s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.text-fade-in {
+    animation: textAnimIn .75s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+.img-slide-right {
+    animation: imgAnimRight .75s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.img-slide-left {
+    animation: imgAnimLeft .75s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+/* MEDIA QUERRY FOR SMALL LAPTOP */
+@media (max-width: 1140px) {
+    #container {
+        width: 1140px;
+        background-position: 95% 35.3%, 5% 30.5%;
+    }
+
+    .text-area {
+        width: 525px;
+        font-size: 27px;
+    }
+
+    #overflow-box {
+        width: 400px;
+        margin: 113px 0 0 435px;
+    }
+
+    img {
+        width: auto;
+    }
+
+    .name, .title {
+        font-size: 17px;
+    }
+}
+
+/* MEDIA QUERRY FOR TABLET */
+@media (max-width: 860px) {
+    body {
+        background-size: 400px;
+    }
+
+    #container {
+        width: 500px;
+        background: url("/images/pattern-bg.svg"), url("/images/pattern-quotes.svg");
+        background-position: 49.8% 6.8%, 50% 70%;
+        background-size: 500px, 70px;
+        background-repeat: no-repeat;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .text-area {
+        font-size: 20px;
+        margin: 525px 0 0 0;
+        width: 475px;
+        transform: translateX(-50px);
+        text-align: center;
+    }
+
+    .quote {
+        line-height: 1.35;
+    }
+
+    .person {
+        margin-top: 25px;
+    }
+
+    .name, .title {
+        display: block;
+        font-size: 16px;
+        margin: 2px 0 0 0;
+    }
+
+    #overflow-box {
+        width: 400px;
+        height: 400px;
+        margin: 53px 0 0 0;
+    }
+
+    img {
+        width: 400px;
+        height: 400px;
+    }
+
+    #shadow-box {
+        position: absolute;
+        z-index: -1;
+        width: 170px;
+        height: 100px;
+        margin: -101px 0 0 90px;
+        box-shadow: 0 25px 35px #bcbcd4;
+        background-color: transparent;
+    }
+
+    #btn-box {
+        width: 90px;
+        height: 40px;
+        margin: -20px 0 0 150px;
+    }
+    
+    #left-circle {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+    }
+    
+    #rectangle {
+        width: 46px;
+        height: 40px;
+        margin-left: 20px;
+        background: white;
+    }
+    
+    #right-circle {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        margin-left: 46px;
+    }
+
+    #btn-left {
+        margin-left: 17px;
+    }
+    
+    #btn-right {
+        margin-left: 27px;
+    }
+
+    @keyframes imgAnimRight {
+        100% {
+            transform: translateX(-400px);
+        }
+    }
+    
+    @keyframes imgAnimLeft {
+        0% {
+            transform: translateX(-400px);
+        }
+    }
+}
+
+/* MEDIA QUERRY FOR MOBILE */
+@media (max-width: 500px) {
+    body {
+        background-size: 285px;
+    }
+
+    #container {
+        width: 375px;
+        background: url("/images/pattern-bg.svg"), url("/images/pattern-quotes.svg");
+        background-position: 49.8% 6.8%, 50% 59%;
+        background-size: 326px, 60px;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .text-area {
+        font-size: 18px;
+        margin: 389px 0 0 0;
+        width: 315px;
+        transform: translateX(-30px);
+        text-align: center;
+    }
+
+    .quote {
+        line-height: 1.34;
+    }
+
+    .person {
+        margin-top: 19px;
+    }
+
+    .name, .title {
+        display: block;
+        font-size: 15px;
+        margin: 2px 0 0 0;
+    }
+
+    #overflow-box {
+        width: 254px;
+        height: 254px;
+        margin: 53px 0 0 0;
+    }
+
+    img {
+        width: 254px;
+        height: 254px;
+    }
+
+    #shadow-box {
+        position: absolute;
+        z-index: -1;
+        width: 170px;
+        height: 100px;
+        margin: -101px 0 0 27px;
+        box-shadow: 0 22px 30px #bcbcd4;
+        background-color: transparent;
+    }
+
+    #btn-box {
+        width: 90px;
+        height: 40px;
+        margin: -20px 0 0 84px;
+    }
+    
+    #left-circle {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+    }
+    
+    #rectangle {
+        width: 46px;
+        height: 40px;
+        margin-left: 20px;
+        background: white;
+    }
+    
+    #right-circle {
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        margin-left: 46px;
+    }
+
+    #btn-left {
+        margin-left: 17px;
+    }
+    
+    #btn-right {
+        margin-left: 27px;
+    }
+
+    @keyframes imgAnimRight {
+        100% {
+            transform: translateX(-254px);
+        }
+    }
+    
+    @keyframes imgAnimLeft {
+        0% {
+            transform: translateX(-254px);
+        }
+    }
+}
