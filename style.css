@@ -258,7 +258,6 @@ body {
 
     #container {
         width: 500px;
-        background: url("/images/pattern-bg.svg"), url("/images/pattern-quotes.svg");
         background-position: 49.8% 6.8%, 50% 70%;
         background-size: 500px, 70px;
         background-repeat: no-repeat;
@@ -367,7 +366,6 @@ body {
 
     #container {
         width: 375px;
-        background: url("/images/pattern-bg.svg"), url("/images/pattern-quotes.svg");
         background-position: 49.8% 6.8%, 50% 59%;
         background-size: 326px, 60px;
         background-repeat: no-repeat;
